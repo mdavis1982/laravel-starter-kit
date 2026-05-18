@@ -14,7 +14,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('jobs', function (Blueprint $table): void {
+            // ID
             $table->id();
+
+            // Relationships
+            // ...
+
+            // Data
             $table->string('queue')->index();
             $table->longText('payload');
             $table->unsignedSmallInteger('attempts');
@@ -24,7 +30,13 @@ return new class extends Migration
         });
 
         Schema::create('job_batches', function (Blueprint $table): void {
+            // ID
             $table->string('id')->primary();
+
+            // Relationships
+            // ...
+
+            // Data
             $table->string('name');
             $table->integer('total_jobs');
             $table->integer('pending_jobs');
@@ -37,7 +49,13 @@ return new class extends Migration
         });
 
         Schema::create('failed_jobs', function (Blueprint $table): void {
+            // ID
             $table->id();
+
+            // Relationships
+            // ...
+
+            // Data
             $table->string('uuid')->unique();
             $table->string('connection');
             $table->string('queue');
