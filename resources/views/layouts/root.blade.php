@@ -30,6 +30,7 @@
             <x-debug.tailwind-breakpoint-tool/>
         @endif
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @livewireStyles
         @stack('stylesheets')
 
         {{-- Open Graph Meta Tags --}}
@@ -50,6 +51,7 @@
     <body class="@yield('body-classes')">
         @yield('body')
 
+        @livewireScripts
         @stack('javascript')
     </body>
 </html>
