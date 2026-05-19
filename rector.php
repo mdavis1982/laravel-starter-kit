@@ -46,6 +46,8 @@ return RectorConfig::configure()
         __DIR__ . '/tests',
     ])
     ->withSkip([
+        __DIR__ . '/public/index.php',
+
         AddOverrideAttributeToOverriddenMethodsRector::class,
     ])
     ->withPreparedSets(
