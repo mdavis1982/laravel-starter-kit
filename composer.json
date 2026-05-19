@@ -11,7 +11,8 @@
     "require": {
         "php": "^8.5",
         "laravel/framework": "^13.8",
-        "laravel/tinker": "^3.0"
+        "laravel/tinker": "^3.0",
+        "thecodingmachine/safe": "^3.4"
     },
     "require-dev": {
         "driftingly/rector-laravel": "^2.3",
@@ -27,7 +28,8 @@
         "pestphp/pest-plugin-laravel": "^4.1",
         "pestphp/pest-plugin-type-coverage": "^4.0",
         "rector/rector": "^2.4",
-        "roave/security-advisories": "dev-latest"
+        "roave/security-advisories": "dev-latest",
+        "thecodingmachine/phpstan-safe-rule": "^1.4"
     },
     "autoload": {
         "psr-4": {

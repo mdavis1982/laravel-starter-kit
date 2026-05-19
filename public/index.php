@@ -5,6 +5,8 @@ declare(strict_types=1);
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 
+use function Safe\define;
+
 define('LARAVEL_START', microtime(true));
 
 // Determine if the application is in maintenance mode...

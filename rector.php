@@ -25,6 +25,8 @@ return RectorConfig::configure()
 
         PestSetList::PEST_CODE_QUALITY,
         PestSetList::PEST_40,
+
+        __DIR__ . '/vendor/thecodingmachine/safe/rector-migrate.php',
     ])
     ->withImportNames(
         removeUnusedImports: true,
