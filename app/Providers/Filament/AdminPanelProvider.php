@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Providers\Filament;
 
 use Filament\Http\Middleware\Authenticate;
@@ -18,8 +20,9 @@ use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use pxlrbt\FilamentEnvironmentIndicator\EnvironmentIndicatorPlugin;
 
-class AdminPanelProvider extends PanelProvider
+final class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
@@ -40,6 +43,14 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 AccountWidget::class,
                 FilamentInfoWidget::class,
+            ])
+            ->plugins([
+                EnvironmentIndicatorPlugin::make()
+                    ->color(fn () => match (app()->environment()) {
+                        'production' => Color::Blue,
+                        'staging' => Color::Amber,
+                        default => Color::Green,
+                    }),
             ])
             ->middleware([
                 EncryptCookies::class,
