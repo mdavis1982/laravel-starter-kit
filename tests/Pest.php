@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Validation\ValidationException;
 use Tests\TestCase;
+
+use function Safe\json_encode;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +36,18 @@ pest()->extend(TestCase::class)
 
 expect()->extend('toHaveColumns', function (array $columns): void {
     expect(Schema::hasColumns($this->value, $columns))->toBeTrue();
+});
+
+expect()->extend('toBeInvalid', function ($errors): void {
+    try {
+        $this->value->__invoke();
+
+        test()->fail('No validation exception was thrown!');
+    } catch (ValidationException $validationException) {
+        foreach ($errors as $key => $error) {
+            expect(json_encode($validationException->errors()[$key]))->toContain($error);
+        }
+    }
 });
 
 /*
