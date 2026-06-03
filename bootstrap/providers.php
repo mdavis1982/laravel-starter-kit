@@ -1,7 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
+use App\Providers\ActionsServiceProvider;
+use App\Providers\AppServiceProvider;
+use App\Providers\Filament\AdminPanelProvider;
+
 return [
-    App\Providers\ActionsServiceProvider::class,
-    App\Providers\AppServiceProvider::class,
-    App\Providers\Filament\AdminPanelProvider::class,
+    ActionsServiceProvider::class,
+    AppServiceProvider::class,
+    AdminPanelProvider::class,
 ];
