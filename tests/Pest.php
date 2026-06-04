@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Tests\TestCase;
 
@@ -48,6 +49,12 @@ expect()->extend('toBeInvalid', function ($errors): void {
             expect(json_encode($validationException->errors()[$key]))->toContain($error);
         }
     }
+});
+
+expect()->extend('toBeOfType', function (string $type): void {
+    $assertion = Str::contains($type, '\\') ? 'toBeInstanceOf' : 'toBe' . Str::ucfirst($type);
+
+    expect($this->value)->{$assertion}($type);
 });
 
 /*
