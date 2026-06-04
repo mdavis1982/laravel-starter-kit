@@ -110,7 +110,7 @@ final class AppServiceProvider extends ServiceProvider
     private function configurePasswordValidation(): void
     {
         Password::defaults(function () {
-            if (! app()->isProduction() || ! app()->runningUnitTests()) {
+            if (! app()->isProduction() || app()->runningUnitTests()) {
                 return null;
             }
 
