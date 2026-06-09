@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use App\Models\User;
 use Carbon\CarbonImmutable;
-use Illuminate\Support\Str;
 
 it('has the correct columns', function (): void {
     expect('users')->toHaveColumns([
@@ -22,9 +21,8 @@ it('has the correct columns', function (): void {
 it('casts columns to the correct types', function (string $column, string $type): void {
     $user = User::factory()->create();
 
-    $assertion = Str::contains($type, '\\') ? 'toBeInstanceOf' : 'toBe' . Str::ucfirst($type);
-
-    expect($user->$column)->$assertion($type);
+    expect($user->$column)
+        ->toBeOfType($type);
 })->with([
     ['id', 'int'],
     ['name', 'string'],
