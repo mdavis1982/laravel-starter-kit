@@ -31,10 +31,13 @@ final class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->colors([
-                'primary' => Color::Amber,
-            ])
+            ->colors(fn (): array => match (app()->environment()) {
+                'production' => ['primary' => Color::Blue],
+                'staging' => ['primary' => Color::Amber],
+                default => ['primary' => Color::Green],
+            })
             ->databaseNotifications()
+            ->sidebarCollapsibleOnDesktop()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
@@ -44,14 +47,6 @@ final class AdminPanelProvider extends PanelProvider
             ->widgets([
                 AccountWidget::class,
                 FilamentInfoWidget::class,
-            ])
-            ->plugins([
-                EnvironmentIndicatorPlugin::make()
-                    ->color(fn (): array => match (app()->environment()) {
-                        'production' => Color::Blue,
-                        'staging' => Color::Amber,
-                        default => Color::Green,
-                    }),
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -66,6 +61,14 @@ final class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+            ])
+            ->plugins([
+                EnvironmentIndicatorPlugin::make()
+                    ->color(fn (): array => match (app()->environment()) {
+                        'production' => Color::Blue,
+                        'staging' => Color::Amber,
+                        default => Color::Green,
+                    }),
             ]);
     }
 }
