@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Providers\Filament;
 
+use App\Filament\Providers\AvatarProvider;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -36,6 +37,7 @@ final class AdminPanelProvider extends PanelProvider
                 'staging' => ['primary' => Color::Amber],
                 default => ['primary' => Color::Green],
             })
+            ->defaultAvatarProvider(AvatarProvider::class)
             ->databaseNotifications()
             ->sidebarCollapsibleOnDesktop()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
