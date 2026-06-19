@@ -38,8 +38,8 @@
         <meta property="og:description" content="@yield('og:description', config('meta.default.opengraph.description'))">
         <meta property="og:type" content="@yield('og:type', config('meta.default.opengraph.type'))">
         <meta property="og:url" content="@yield('og:url', url()->current())">
-        <meta property="og:image" content="@yield('og:image', config('meta.default.opengraph.image')) }}">
-        <meta property="og:image:alt" content="@yield('og:image:alt', config('meta.default.opengraph.image-alt')) }}">
+        <meta property="og:image" content="@yield('og:image', config('meta.default.opengraph.image'))">
+        <meta property="og:image:alt" content="@yield('og:image:alt', config('meta.default.opengraph.image-alt'))">
         <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}">
 
         {{-- Favicons --}}
