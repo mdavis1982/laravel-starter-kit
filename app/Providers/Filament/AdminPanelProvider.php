@@ -35,7 +35,7 @@ final class AdminPanelProvider extends PanelProvider
             ->colors(fn (): array => match (app()->environment()) {
                 'production' => ['primary' => Color::Blue],
                 'staging' => ['primary' => Color::Amber],
-                default => ['primary' => Color::Green],
+                default => ['primary' => Color::Purple],
             })
             ->defaultAvatarProvider(AvatarProvider::class)
             ->databaseNotifications()
@@ -70,7 +70,7 @@ final class AdminPanelProvider extends PanelProvider
                     ->color(fn (): array => match (app()->environment()) {
                         'production' => Color::Blue,
                         'staging' => Color::Amber,
-                        default => Color::Green,
+                        default => Color::Purple,
                     }),
             ]);
     }
