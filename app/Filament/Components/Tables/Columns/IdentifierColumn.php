@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Filament\Tables\Columns;
+namespace App\Filament\Components\Tables\Columns;
 
 use Filament\Tables\Columns\TextColumn;
 use FuzzyFox\Lucide\Lucide;
@@ -17,6 +17,7 @@ final class IdentifierColumn extends TextColumn
             ->sortable()
             ->toggleable(isToggledHiddenByDefault: true)
             ->copyable()
+            ->copyMessage('ID copied')
             ->icon(Lucide::ClipboardCopy)
             ->label('ID');
     }

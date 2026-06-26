@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Filament\Tables\Columns;
+namespace App\Filament\Components\Infolists\Entries;
 
-use Filament\Tables\Columns\TextColumn;
+use Filament\Infolists\Components\TextEntry;
 use Illuminate\Support\Str;
 
-final class TimestampColumn extends TextColumn
+final class TimestampEntry extends TextEntry
 {
     protected function setUp(): void
     {
@@ -15,8 +15,6 @@ final class TimestampColumn extends TextColumn
 
         $this->since()
             ->dateTimeTooltip()
-            ->sortable()
-            ->toggleable()
             ->label(
                 fn () => Str::of($this->getName())
                     ->snake(' ')
