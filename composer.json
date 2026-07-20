@@ -18,7 +18,8 @@
         "livewire/livewire": "^4.3",
         "nunomaduro/laravel-sluggable": "^1.0",
         "pxlrbt/filament-environment-indicator": "^3.5",
-        "thecodingmachine/safe": "^3.4"
+        "thecodingmachine/safe": "^3.4",
+        "useclassy/laravel": "^2.1"
     },
     "require-dev": {
         "driftingly/rector-laravel": "^2.3",

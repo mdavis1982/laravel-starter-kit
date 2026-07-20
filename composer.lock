@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee16d39cd0514ffc6e2ff67193834624",
+    "content-hash": "18e2651560207e4f7285923706ad05fd",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8651,6 +8651,68 @@
                 }
             ],
             "time": "2026-06-12T18:19:46+00:00"
+        },
+        {
+            "name": "useclassy/laravel",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jrmybtlr/useclassy-laravel.git",
+                "reference": "b73fa06bd6eecdd452793e5de0cbd366a33224fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jrmybtlr/useclassy-laravel/zipball/b73fa06bd6eecdd452793e5de0cbd366a33224fd",
+                "reference": "b73fa06bd6eecdd452793e5de0cbd366a33224fd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^11.0|^12.0|^13.0",
+                "illuminate/view": "^11.0|^12.0|^13.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^9.0|^10.0|^11.0",
+                "phpunit/phpunit": "^11.0|^12.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "UseClassy\\Laravel\\UseClassyServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "UseClassy\\Laravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Butler",
+                    "email": "jeremy@jeremymbutler.com"
+                }
+            ],
+            "description": "Laravel integration for UseClassy - Transform class:modifier syntax in Blade templates",
+            "keywords": [
+                "blade",
+                "css",
+                "laravel",
+                "tailwind",
+                "useclassy"
+            ],
+            "support": {
+                "issues": "https://github.com/jrmybtlr/useclassy-laravel/issues",
+                "source": "https://github.com/jrmybtlr/useclassy-laravel/tree/v2.1.0"
+            },
+            "time": "2026-07-17T09:12:51+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
