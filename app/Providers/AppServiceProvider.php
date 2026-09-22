@@ -83,7 +83,7 @@ final class AppServiceProvider extends ServiceProvider
             // Application metadata
             $head
                 ->applicationName(config()->string('app.name'))
-                ->viewport('width=device-width, initial-scale=1');
+                ->viewport('width=device-width');
 
             // Social
             $head

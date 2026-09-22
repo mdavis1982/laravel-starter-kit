@@ -1,5 +1,3 @@
-@extends('layouts.root')
-
-@section('body')
-    @yield('content')
-@endsection
+<x-layouts::root {{ $attributes }}>
+    {{ $slot }}
+</x-layouts::root>
