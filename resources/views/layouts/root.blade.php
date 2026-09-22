@@ -8,17 +8,11 @@
     <head>
         <meta charset="utf-8">
 
-        {{-- Head--}}
+        {{-- Head --}}
         @head
 
         {{-- Custom Font --}}
-        {{-- https://csswizardry.com/2020/05/the-fastest-google-fonts/ --}}
-        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
-        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,100..900;1,9..40,100..900&display=swap"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,100..900;1,9..40,100..900&display=swap" media="print" onload="this.media='all'"/>
-        <noscript>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,100..900;1,9..40,100..900&display=swap"/>
-        </noscript>
+        @fonts
 
         {{-- Stylesheets & Javascript --}}
         @if (app()->hasDebugModeEnabled())
