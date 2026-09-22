@@ -3,18 +3,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="@yield('html-classes')">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        {{-- Title and Description --}}
-        <title>
-            @hasSection('title')
-                @yield('title') - {{ config('app.name') }}
-            @else
-                {{ config('meta.default.title') }}
-            @endif
-        </title>
-
-        <meta name="description" content="@yield('description', config('meta.default.description'))"/>
+        {{-- Head--}}
+        @head
 
         {{-- Custom Font --}}
         {{-- https://csswizardry.com/2020/05/the-fastest-google-fonts/ --}}
@@ -32,20 +23,6 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
         @stack('stylesheets')
-
-        {{-- Open Graph Meta Tags --}}
-        <meta property="og:title" content="@yield('og:title', config('meta.default.opengraph.title'))">
-        <meta property="og:description" content="@yield('og:description', config('meta.default.opengraph.description'))">
-        <meta property="og:type" content="@yield('og:type', config('meta.default.opengraph.type'))">
-        <meta property="og:url" content="@yield('og:url', url()->current())">
-        <meta property="og:image" content="@yield('og:image', config('meta.default.opengraph.image'))">
-        <meta property="og:image:alt" content="@yield('og:image:alt', config('meta.default.opengraph.image-alt'))">
-        <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-        {{-- Favicons --}}
-        <link rel="icon" href="/favicon.ico" sizes="any"/>
-        <link rel="icon" href="/icon.svg" type="image/svg+xml"/>
-        <link rel="apple-touch-icon" href="/icon.png"/>
     </head>
 
     <body class="@yield('body-classes')">
