@@ -1,11 +1,11 @@
-import {defineConfig} from 'vite';
-import laravel from 'laravel-vite-plugin';
-import {bunny} from 'laravel-vite-plugin/fonts';
 import tailwindcss from '@tailwindcss/vite';
+import laravel from 'laravel-vite-plugin';
+import { bunny } from 'laravel-vite-plugin/fonts';
 import useClassy from 'vite-plugin-useclassy';
+import { defineConfig, lazyPlugins } from 'vite-plus';
 
 export default defineConfig({
-    plugins: [
+    plugins: lazyPlugins(() => [
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
@@ -16,10 +16,10 @@ export default defineConfig({
             ],
         }),
         useClassy({
-            language: 'blade'
+            language: 'blade',
         }),
         tailwindcss(),
-    ],
+    ]),
     server: {
         watch: {
             ignored: ['**/storage/framework/views/**'],
