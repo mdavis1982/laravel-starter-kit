@@ -5,7 +5,7 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
-@source "./.classy/output.classy.html";
+@source '../../.classy/output.classy.html';
 
 @theme {
     --font-sans:

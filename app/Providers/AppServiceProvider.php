@@ -119,7 +119,7 @@ final class AppServiceProvider extends ServiceProvider
      */
     private function enforceHttps(): void
     {
-        URL::forceHttps();
+        URL::forceHttps(app()->isProduction());
     }
 
     /**
